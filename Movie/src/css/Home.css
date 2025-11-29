@@ -1,0 +1,63 @@
+.home-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  flex-wrap: wrap;
+}
+
+.sidebar {
+  flex: 1 1 200px;
+  background-color: #222;
+  color: white;
+  padding: 2rem;
+}
+
+.main-content {
+  flex: 3 1 600px;
+  padding: 2rem;
+}
+
+.search-bar {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.search-bar input {
+  flex: 1;
+  padding: 0.5rem;
+  font-size: 1rem;
+}
+
+.search-bar button {
+  padding: 0.5rem 1rem;
+  background-color: #e50914;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.movieGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 20px;
+}
+
+.footer {
+  width: 100%;
+  background-color: #222;
+  color: white;
+  padding: 1rem 2rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    order: -1;
+  }
+}
