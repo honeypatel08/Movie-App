@@ -1,4 +1,4 @@
-// API key: caf3c2526046145c9b421ffb4e799519
+// API key: 390f526cff5d58b2757663a7a41c9b1e
 
 /*
     good practice to create seperate file contians all api call 
@@ -7,12 +7,19 @@
 */
 //seatch for movie, detail of movie 
 
-const API_KEY = "caf3c2526046145c9b421ffb4e799519";
+const API_KEY = "390f526cff5d58b2757663a7a41c9b1e";
 const BASE_URL = "https://api.themoviedb.org/3";
 
 export const getPopularMovies = async () => {
   const response = await fetch(
     `${BASE_URL}/movie/popular?api_key=${API_KEY}`);
+  const data = await response.json();
+  return data.results;
+};
+
+export const getUpcomingMovies = async () => {
+  const response = await fetch(
+    `${BASE_URL}/movie/upcoming?api_key=${API_KEY}`);
   const data = await response.json();
   return data.results;
 };

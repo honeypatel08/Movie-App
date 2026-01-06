@@ -1,3 +1,8 @@
+import MovieCard from "../components/MovieCard"
+import '../css/Popular.css'
+import { useState, useEffect} from "react"
+import { searchMovies, getPopularMovies } from "../services/api"; 
+
 // this is pages 
 /* 
     naviagate pagges ie home, fav, etc 
@@ -6,11 +11,6 @@
     
     page routing 
 */
-import MovieCard from "../components/MovieCard"
-import '../css/Popular.css'
-import { useState, useEffect} from "react"
-import { searchMovies, getPopularMovies } from "../services/api"; 
-
 
 function Popular(){
 

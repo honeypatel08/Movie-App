@@ -4,8 +4,13 @@ import Favorites from './pages/Favorites'
 import {Routes, Route} from "react-router-dom"
 import NavBar from './components/NavBar'
 import {MovieProvider} from "./contexts/MovieContext"
-import Popular from './pages/popular'
+import Popular from './pages/Popular'
 import TopRate from './pages/TopRate'
+import Upcoming from './pages/Upcoming'
+import TVPopular from './pages/TVPopular'
+import TVAiringToday from './pages/TVAiringToday'
+import TVOnTV from './pages/TVOnTV'
+import TVTopRated from './pages/TVTopRated'
 
 // import {MovieCart} from "./components/MovieCard" named export 
 
@@ -19,80 +24,18 @@ function App(){
             <Route path='*' element ={<Home />} />
             <Route path='/movies/popular' element ={<Popular />} />
             <Route path='/movies/top-rated' element ={<TopRate />} />
+            <Route path='/movies/upcoming' element ={<Upcoming />} />
             <Route path='/favorites' element ={<Favorites />} />
+
+            <Route path="/tv-show/popular" element={<TVPopular />} />
+            <Route path="/tv-show/top-rated" element={<TVTopRated />} />
+            <Route path="/tv-show/airing-today" element={<TVAiringToday />} />
+            <Route path="/tv-show/on-tv" element={<TVOnTV />} />
+
         </Routes>
       </main>
     </MovieProvider>
   );
 }
-
-
-
-
-
-
-
-
-/*
-function App() { // root component. 
-  const movieNumebr = 1; 
-
-  return (
-    <>
-    {movieNumebr ===1 && <MovieCard movie ={{title: "My Oxford Year", 
-        releaseDate: "Aug 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-    }
-    {movieNumebr ===2 && <MovieCard movie ={{title: "One Battle After Another", 
-        releaseDate: "Sep 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-    }
-    {movieNumebr ===3 && <MovieCard movie ={{title: "Wicked: For Good", 
-        releaseDate: "Nov 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-    }
-
-      {/* <MovieCard movie ={{title: "My Oxford Year", 
-        releaseDate: "Aug 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-
-        <MovieCard movie ={{title: "One Battle After Another", 
-        releaseDate: "Sep 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-
-        <MovieCard movie ={{title: "Wicked: For Good", 
-        releaseDate: "Nov 2025", 
-        url: "https://via.placeholder.com/150"}}/> */
-      /* {movieNumebr === 1? 
-        <MovieCard movie ={{title: "My Oxford Year", 
-        releaseDate: "Aug 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-      ): (
-        <MovieCard movie ={{title: "One Battle After Another", 
-        releaseDate: "Sep 2025", 
-        url: "https://via.placeholder.com/150"}}/>
-      )} }
-       <div>
-          <p> "Hello World" </p>
-      </div>
-
-      <Text display={"Hello"} />
-      <Text display={"what's up"}/>
-      <Text display={"act like parameter"} > </ Text> 
-      <Text /> 
-
-
-function Text({display}){
-  return (
-    <>
-      <div>
-          <p> {display} </p>
-      </div>
-    </>   
-      
-  )
-}
-
-*/
 
 export default App

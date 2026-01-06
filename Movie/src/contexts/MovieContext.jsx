@@ -26,20 +26,41 @@ export const MovieProvider = ({children}) => {
         localStorage.setItem('favorites', JSON.stringify(favorites))
     }, [favorites])
 
-    const addToFavorites = (movie) => {
-        // all and new 
-        setFavorites(prev => [...prev, movie])  
-    }
+    // const addToFavorites = (movie) => {
+    //     // all and new 
+    //     setFavorites(prev => [...prev, movie])  
+    // }
 
-    const removeToFavorites = (movieId) => {
-        // filler out the movie that i matches 
-        setFavorites(prev => prev.filter(movie => movie.id !== movieId))  
-    }
+    const addToFavorites = (item, mediaType) => {
+        setFavorites((prev) => {
+        const exists = prev.some(
+            (fav) => fav.id === item.id && fav.media_type === mediaType
+        );
+        if (exists) return prev;
+        return [...prev, { ...item, media_type: mediaType }];
+        });
+    };
 
-     const isFavorites = (movieId) => {
-        // filler out the movie that i matches 
-        return favorites.some(movie => movie.id === movieId) 
-    }
+    // const removeToFavorites = (movieId) => {
+    //     // filler out the movie that i matches 
+    //     setFavorites(prev => prev.filter(movie => movie.id !== movieId))  
+    // }
+
+    const removeToFavorites = (id, mediaType) => {
+        setFavorites((prev) =>
+        prev.filter(
+            (fav) => !(fav.id === id && fav.media_type === mediaType)
+        )
+        );
+    };
+
+    //  const isFavorites = (movieId) => {
+    //     // filler out the movie that i matches 
+    //     return favorites.some(movie => movie.id === movieId) 
+    // }
+    const isFavorites = (id, mediaType) => {
+        return favorites.some( (fav) => fav.id === id && fav.media_type === mediaType);
+    };
 
     const value = {
         favorites,

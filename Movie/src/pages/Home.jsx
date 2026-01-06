@@ -81,8 +81,13 @@ function Home() {
 
       <footer className="footer">
         <h3>Contact Us</h3>
-        <p>Email: shivipp2005@gmail.com | Phone: +1 (123)-456-7890</p>
-      </footer>
+        <p>
+          Email:{" "}
+          <a href="mailto:shivipp2005@gmail.com"> shivipp2005@gmail.com
+          </a> {" "} | Phone:{" "}
+          <a href="tel:+11234567890"> +1 (123) 456-7890 </a>
+        </p>
+      </footer> 
     </div>
   );
 }
